@@ -1,54 +1,57 @@
 {
   "win": {
-    "Hacking : Recon & Scanning": [
-      { "name": "Nmap", "desc": "Scanner de ports et détection d'OS.", "amd64": "https://nmap.org/dist/nmap-7.94-setup.exe" },
-      { "name": "Zenmap", "desc": "Interface graphique officielle pour Nmap.", "amd64": "https://nmap.org/dist/nmap-7.94-setup.exe" },
-      { "name": "Advanced IP Scanner", "desc": "Analyseur de réseau local rapide.", "amd64": "https://www.advanced-ip-scanner.com/download/Advanced_IP_Scanner_2.5.4594.1.exe" },
-      { "name": "Angry IP Scanner", "desc": "Scanner d'adresses IP open-source.", "amd64": "https://github.com/angryip/ipscan/releases/latest" }
+    "Navigateurs & Internet": [
+      { "name": "Google Chrome", "desc": "Le navigateur le plus rapide et populaire.", "amd64": "https://www.google.com/chrome/" },
+      { "name": "Mozilla Firefox", "desc": "Navigateur libre respectueux de la vie privée.", "amd64": "https://www.mozilla.org/fr/firefox/download/thanks/" },
+      { "name": "Brave", "desc": "Bloque les publicités et les trackers par défaut.", "amd64": "https://brave.com/download/" },
+      { "name": "Opera GX", "desc": "Le navigateur pour les gamers.", "amd64": "https://www.opera.com/fr/gx#download" }
     ],
-    "Hacking : Web & Proxy": [
-      { "name": "Burp Suite Community", "desc": "Le standard pour l'audit d'applications web.", "amd64": "https://portswigger.net/burp/releases/community/latest" },
-      { "name": "OWASP ZAP", "desc": "Alternative gratuite et puissante à Burp Suite.", "amd64": "https://www.zaproxy.org/download/" },
-      { "name": "Fiddler Classic", "desc": "Proxy de débogage HTTP/HTTPS.", "amd64": "https://www.telerik.com/download/fiddler" }
+    "Communication & Social": [
+      { "name": "Discord", "desc": "Messagerie, voix et vidéo pour tous.", "amd64": "https://discord.com/api/download?platform=win" },
+      { "name": "WhatsApp Desktop", "desc": "Vos messages sur votre ordinateur.", "amd64": "https://www.whatsapp.com/download" },
+      { "name": "Telegram", "desc": "Messagerie ultra-rapide et sécurisée.", "amd64": "https://desktop.telegram.org/caps/mswin/setup" },
+      { "name": "Zoom", "desc": "Vidéoconférences et réunions en ligne.", "amd64": "https://zoom.us/download" },
+      { "name": "Skype", "desc": "Appels et messages gratuits.", "amd64": "https://www.skype.com/fr/get-skype/" }
     ],
-    "Hacking : Exploitation & Forensics": [
-      { "name": "Metasploit Framework", "desc": "Outil d'exploitation de vulnérabilités.", "amd64": "https://windows.metasploit.com/metasploitframework-latest.msi" },
-      { "name": "Autopsy", "desc": "Plateforme d'investigation numérique (Forensics).", "amd64": "https://www.autopsy.com/download/" },
-      { "name": "FTK Imager", "desc": "Acquisition de preuves et images disques.", "amd64": "https://accessdata.com/product-download/ftk-imager-version-4-5" }
+    "Bureautique & Productivité": [
+      { "name": "LibreOffice", "desc": "L'alternative gratuite n°1 à Microsoft Office.", "amd64": "https://www.libreoffice.org/download/download/" },
+      { "name": "Notion", "desc": "Espace de travail tout-en-un (notes, tâches).", "amd64": "https://www.notion.so/desktop" },
+      { "name": "Microsoft Teams", "desc": "Outil de collaboration professionnel.", "amd64": "https://www.microsoft.com/fr-fr/microsoft-teams/download-app" },
+      { "name": "Evernote", "desc": "Prise de notes intelligente.", "amd64": "https://evernote.com/download" }
     ],
-    "Hacking : Password Cracking": [
-      { "name": "John the Ripper", "desc": "Casseur de mots de passe multi-plateforme.", "amd64": "https://www.openwall.com/john/" },
-      { "name": "Hashcat", "desc": "Le casseur de hash le plus rapide (GPU).", "amd64": "https://hashcat.net/hashcat/" },
-      { "name": "Cain & Abel", "desc": "Outil classique pour la récupération de mots de passe.", "amd64": "http://www.oxid.it/cain.html" }
+    "Multimédia & Création": [
+      { "name": "VLC Media Player", "desc": "Le lecteur qui lit absolument tout.", "amd64": "https://get.videolan.org/vlc/last/win64/vlc-win64.exe" },
+      { "name": "Spotify", "desc": "Toute la musique en streaming.", "amd64": "https://www.spotify.com/fr/download/windows/" },
+      { "name": "OBS Studio", "desc": "Enregistrement d'écran et streaming pro.", "amd64": "https://obsproject.com/download" },
+      { "name": "Audacity", "desc": "Éditeur audio gratuit et complet.", "amd64": "https://www.audacityteam.org/download/" },
+      { "name": "DaVinci Resolve", "desc": "Montage vidéo de qualité cinéma.", "amd64": "https://www.blackmagicdesign.com/fr/products/davinciresolve" },
+      { "name": "Blender", "desc": "Modélisation et animation 3D.", "amd64": "https://www.blender.org/download/" }
     ],
-    "Analyse Réseau (Sniffing)": [
-      { "name": "Wireshark", "desc": "Analyseur de protocoles réseau de référence.", "amd64": "https://2.tlu.dl.wireshark.org/win64/Wireshark-latest.exe" },
-      { "name": "TCPView", "desc": "Visualise toutes les connexions actives en temps réel.", "amd64": "https://download.sysinternals.com/files/TCPView.zip" }
+    "Utilitaires & Système": [
+      { "name": "7-Zip", "desc": "Compresseur de fichiers ultra-puissant.", "amd64": "https://www.7-zip.org/a/7z2301-x64.exe" },
+      { "name": "CCleaner", "desc": "Nettoyage et optimisation du PC.", "amd64": "https://www.ccleaner.com/ccleaner/download" },
+      { "name": "Rufus", "desc": "Créer des clés USB bootables facilement.", "amd64": "https://rufus.ie/fr/" },
+      { "name": "Bitwarden", "desc": "Gestionnaire de mots de passe gratuit.", "amd64": "https://bitwarden.com/download/" }
+    ],
+    "Jeux & Plateformes": [
+      { "name": "Steam", "desc": "La plus grande boutique de jeux PC.", "amd64": "https://cdn.akamai.steamstatic.com/client/installer/SteamSetup.exe" },
+      { "name": "Epic Games", "desc": "Jeux gratuits chaque semaine.", "amd64": "https://launcher-public-service-prod06.ol.epicgames.com/launcher/api/installer/download/EpicGamesLauncherInstaller.msi" },
+      { "name": "Ubisoft Connect", "desc": "Accès aux jeux Ubisoft.", "amd64": "https://ubisoftconnect.com/" }
     ]
   },
   "iso": {
-    "Linux : Sécurité & Hacking": [
-      { "name": "Kali Linux", "desc": "La distro n°1 pour le pentest (Offensive Security).", "amd64": "https://cdimage.kali.org/kali-2024.1/kali-linux-2024.1-installer-amd64.iso" },
-      { "name": "Parrot Security OS", "desc": "OS complet pour la sécurité et la vie privée.", "amd64": "https://download.parrot.sh/parrot/iso/6.0/Parrot-security-6.0_amd64.iso" },
-      { "name": "BlackArch Linux", "desc": "Plus de 2800 outils de hacking inclus.", "amd64": "https://blackarch.org/downloads.html" },
-      { "name": "BackBox Linux", "desc": "Basée sur Ubuntu, légère et efficace.", "amd64": "https://www.backbox.org/download/" }
+    "Distributions Linux Populaires": [
+      { "name": "Ubuntu 24.04", "desc": "Le Linux le plus accessible.", "amd64": "https://releases.ubuntu.com/24.04/ubuntu-24.04-desktop-amd64.iso" },
+      { "name": "Linux Mint", "desc": "L'interface parfaite pour les ex-Windows.", "amd64": "https://linuxmint.com/download.php" },
+      { "name": "Debian", "desc": "Stabilité et sécurité absolue.", "amd64": "https://www.debian.org/distrib/" },
+      { "name": "Fedora", "desc": "Innovation et dernières technologies.", "amd64": "https://fedoraproject.org/workstation/download/" },
+      { "name": "Manjaro", "desc": "La puissance d'Arch Linux simplifiée.", "amd64": "https://manjaro.org/download/" },
+      { "name": "Zorin OS", "desc": "Élégant, rapide, conçu pour tous.", "amd64": "https://zorin.com/os/download/" }
     ],
-    "Linux : Grand Public (Desktop)": [
-      { "name": "Ubuntu 24.04 LTS", "desc": "Le Linux le plus populaire et stable.", "amd64": "https://releases.ubuntu.com/24.04/ubuntu-24.04-desktop-amd64.iso" },
-      { "name": "Linux Mint", "desc": "Parfait pour débuter (élégant et simple).", "amd64": "https://www.linuxmint.com/download.php" },
-      { "name": "Fedora Workstation", "desc": "Toujours à la pointe des technologies.", "amd64": "https://fedoraproject.org/workstation/download/" },
-      { "name": "Debian", "desc": "Le système universel (ultra-stable).", "amd64": "https://www.debian.org/distrib/" },
-      { "name": "Pop!_OS", "desc": "Excellent pour le dev et le gaming (par System76).", "amd64": "https://pop.system76.com/" }
-    ],
-    "Linux : Performance & Avancé": [
-      { "name": "Arch Linux", "desc": "Pour ceux qui veulent construire leur OS de A à Z.", "amd64": "http://mirrors.evowise.com/archlinux/iso/latest/archlinux-x86_64.iso" },
-      { "name": "Manjaro", "desc": "La puissance d'Arch en version simplifiée.", "amd64": "https://manjaro.org/download/" },
-      { "name": "Zorin OS", "desc": "Conçu pour ressembler à Windows ou Mac.", "amd64": "https://zorin.com/os/download/" }
-    ],
-    "Linux : Vie Privée & Anonymat": [
-      { "name": "Tails", "desc": "L'OS utilisé par Snowden pour l'anonymat total.", "amd64": "https://tails.net/install/index.fr.html" },
-      { "name": "Qubes OS", "desc": "Sécurité par compartimentation (très avancé).", "amd64": "https://www.qubes-os.org/download/" },
-      { "name": "Whonix", "desc": "Système focalisé sur la connexion via Tor.", "amd64": "https://www.whonix.org/wiki/Download" }
+    "Linux : Spécialisés": [
+      { "name": "Kali Linux", "desc": "Pour la cybersécurité (Pentest).", "amd64": "https://cdimage.kali.org/kali-2024.1/kali-linux-2024.1-installer-amd64.iso" },
+      { "name": "Tails", "desc": "Anonymat total (via Tor).", "amd64": "https://tails.net/install/index.fr.html" },
+      { "name": "SteamOS", "desc": "Optimisé pour le gaming.", "amd64": "https://store.steampowered.com/steamos/download" }
     ]
   }
 }
