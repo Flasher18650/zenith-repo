@@ -1,165 +1,54 @@
 {
-"win": {
-"Cyber-Sécurité": [
-{
-"name": "Wireshark",
-"desc": "Analyseur de protocoles réseau en temps réel.",
-"amd64": "https://2.tlu.dl.wireshark.org/win64/Wireshark-latest.exe",
-"i386": "https://2.tlu.dl.wireshark.org/win32/Wireshark-latest.exe"
-},
-{
-"name": "Nmap",
-"desc": "Scanner de ports et outil d'exploration réseau.",
-"amd64": "https://nmap.org/dist/nmap-7.94-setup.exe"
-},
-{
-"name": "Metasploit",
-"desc": "Framework de test d'intrusion et d'exploitation.",
-"amd64": "https://windows.metasploit.com/metasploitframework-latest.msi"
-},
-{
-"name": "Burp Suite Community",
-"desc": "Outils pour la sécurité des applications web.",
-"amd64": "https://portswigger.net/burp/releases/community/latest"
-}
-],
-"Développement": [
-{
-"name": "VS Code",
-"desc": "Éditeur de code polyvalent et puissant.",
-"amd64": "https://code.visualstudio.com/sha/download?build=stable&os=win32-x64",
-"i386": "https://code.visualstudio.com/sha/download?build=stable&os=win32"
-},
-{
-"name": "PyCharm Community",
-"desc": "IDE professionnel pour le développement Python.",
-"amd64": "https://www.jetbrains.com/pycharm/download/"
-},
-{
-"name": "Git for Windows",
-"desc": "Système de contrôle de version décentralisé.",
-"amd64": "https://github.com/git-for-windows/git/releases/latest"
-},
-{
-"name": "Docker Desktop",
-"desc": "Conteneurisation d'applications.",
-"amd64": "https://www.docker.com/products/docker-desktop/"
-}
-],
-"Communication": [
-{
-"name": "Discord",
-"desc": "Messagerie et chat vocal pour les communautés.",
-"amd64": "https://discord.com/api/download?platform=win&format=exe"
-},
-{
-"name": "Telegram",
-"desc": "Messagerie sécurisée et ultra-rapide.",
-"amd64": "https://desktop.telegram.org/caps/mswin/setup"
-},
-{
-"name": "Signal",
-"desc": "Messagerie axée sur la confidentialité.",
-"amd64": "https://updates.signal.org/desktop/signal-desktop-win-7.1.1.exe"
-}
-],
-"Bureautique": [
-{
-"name": "LibreOffice",
-"desc": "Suite bureautique complète et libre.",
-"amd64": "https://www.libreoffice.org/download/download/"
-},
-{
-"name": "7-Zip",
-"desc": "Compresseur et décompresseur de fichiers.",
-"amd64": "https://www.7-zip.org/a/7z2301-x64.exe"
-},
-{
-"name": "SumatraPDF",
-"desc": "Lecteur PDF léger et rapide.",
-"amd64": "https://www.sumatrapdfreader.org/download-free-pdf-viewer"
-}
-],
-"Jeux & Émulation": [
-{
-"name": "Steam",
-"desc": "Plateforme de distribution de jeux vidéo.",
-"amd64": "https://cdn.akamai.steamstatic.com/client/installer/SteamSetup.exe"
-},
-{
-"name": "Epic Games Launcher",
-"desc": "Accès aux jeux Epic Games et Unreal Engine.",
-"amd64": "https://launcher-public-service-prod06.ol.epicgames.com/launcher/api/installer/download/EpicGamesLauncherInstaller.msi"
-},
-{
-"name": "PCSX2",
-"desc": "L'émulateur PS2 de référence.",
-"amd64": "https://pcsx2.net/downloads/"
-},
-{
-"name": "RPCS3",
-"desc": "Émulateur PlayStation 3 open-source.",
-"amd64": "https://rpcs3.net/download"
-}
-],
-"Multimédia": [
-{
-"name": "VLC Media Player",
-"desc": "Lecteur multimédia universel.",
-"amd64": "https://get.videolan.org/vlc/last/win64/vlc-win64.exe"
-},
-{
-"name": "OBS Studio",
-"desc": "Logiciel de streaming et d'enregistrement.",
-"amd64": "https://obsproject.com/download"
-},
-{
-"name": "Blender",
-"desc": "Création 3D et animation professionnelle.",
-"amd64": "https://www.blender.org/download/"
-},
-{
-"name": "DaVinci Resolve",
-"desc": "Montage vidéo et étalonnage pro.",
-"amd64": "https://www.blackmagicdesign.com/fr/products/davinciresolve"
-}
-]
-},
-"mac": {
-"Outils": [
-{
-"name": "AppCleaner",
-"desc": "Désinstallation propre d'applications.",
-"amd64": "https://freemacsoft.net/appcleaner/"
-},
-{
-"name": "IINA",
-"desc": "Lecteur vidéo moderne pour macOS.",
-"amd64": "https://iina.io/"
-}
-]
-},
-"linux": {
-"Système": [
-{
-"name": "Flatpak",
-"desc": "Format universel de paquets Linux.",
-"amd64": "https://flatpak.org/setup/"
-}
-]
-},
-"iso": {
-"Distributions": [
-{
-"name": "Kali Linux",
-"desc": "Distribution pour les tests de sécurité.",
-"amd64": "https://cdimage.kali.org/kali-2024.1/kali-linux-2024.1-installer-amd64.iso"
-},
-{
-"name": "Ubuntu 24.04",
-"desc": "Système Linux stable et populaire.",
-"amd64": "https://releases.ubuntu.com/24.04/ubuntu-24.04-desktop-amd64.iso"
-}
-]
-}
+  "win": {
+    "Hacking : Recon & Scanning": [
+      { "name": "Nmap", "desc": "Scanner de ports et détection d'OS.", "amd64": "https://nmap.org/dist/nmap-7.94-setup.exe" },
+      { "name": "Zenmap", "desc": "Interface graphique officielle pour Nmap.", "amd64": "https://nmap.org/dist/nmap-7.94-setup.exe" },
+      { "name": "Advanced IP Scanner", "desc": "Analyseur de réseau local rapide.", "amd64": "https://www.advanced-ip-scanner.com/download/Advanced_IP_Scanner_2.5.4594.1.exe" },
+      { "name": "Angry IP Scanner", "desc": "Scanner d'adresses IP open-source.", "amd64": "https://github.com/angryip/ipscan/releases/latest" }
+    ],
+    "Hacking : Web & Proxy": [
+      { "name": "Burp Suite Community", "desc": "Le standard pour l'audit d'applications web.", "amd64": "https://portswigger.net/burp/releases/community/latest" },
+      { "name": "OWASP ZAP", "desc": "Alternative gratuite et puissante à Burp Suite.", "amd64": "https://www.zaproxy.org/download/" },
+      { "name": "Fiddler Classic", "desc": "Proxy de débogage HTTP/HTTPS.", "amd64": "https://www.telerik.com/download/fiddler" }
+    ],
+    "Hacking : Exploitation & Forensics": [
+      { "name": "Metasploit Framework", "desc": "Outil d'exploitation de vulnérabilités.", "amd64": "https://windows.metasploit.com/metasploitframework-latest.msi" },
+      { "name": "Autopsy", "desc": "Plateforme d'investigation numérique (Forensics).", "amd64": "https://www.autopsy.com/download/" },
+      { "name": "FTK Imager", "desc": "Acquisition de preuves et images disques.", "amd64": "https://accessdata.com/product-download/ftk-imager-version-4-5" }
+    ],
+    "Hacking : Password Cracking": [
+      { "name": "John the Ripper", "desc": "Casseur de mots de passe multi-plateforme.", "amd64": "https://www.openwall.com/john/" },
+      { "name": "Hashcat", "desc": "Le casseur de hash le plus rapide (GPU).", "amd64": "https://hashcat.net/hashcat/" },
+      { "name": "Cain & Abel", "desc": "Outil classique pour la récupération de mots de passe.", "amd64": "http://www.oxid.it/cain.html" }
+    ],
+    "Analyse Réseau (Sniffing)": [
+      { "name": "Wireshark", "desc": "Analyseur de protocoles réseau de référence.", "amd64": "https://2.tlu.dl.wireshark.org/win64/Wireshark-latest.exe" },
+      { "name": "TCPView", "desc": "Visualise toutes les connexions actives en temps réel.", "amd64": "https://download.sysinternals.com/files/TCPView.zip" }
+    ]
+  },
+  "iso": {
+    "Linux : Sécurité & Hacking": [
+      { "name": "Kali Linux", "desc": "La distro n°1 pour le pentest (Offensive Security).", "amd64": "https://cdimage.kali.org/kali-2024.1/kali-linux-2024.1-installer-amd64.iso" },
+      { "name": "Parrot Security OS", "desc": "OS complet pour la sécurité et la vie privée.", "amd64": "https://download.parrot.sh/parrot/iso/6.0/Parrot-security-6.0_amd64.iso" },
+      { "name": "BlackArch Linux", "desc": "Plus de 2800 outils de hacking inclus.", "amd64": "https://blackarch.org/downloads.html" },
+      { "name": "BackBox Linux", "desc": "Basée sur Ubuntu, légère et efficace.", "amd64": "https://www.backbox.org/download/" }
+    ],
+    "Linux : Grand Public (Desktop)": [
+      { "name": "Ubuntu 24.04 LTS", "desc": "Le Linux le plus populaire et stable.", "amd64": "https://releases.ubuntu.com/24.04/ubuntu-24.04-desktop-amd64.iso" },
+      { "name": "Linux Mint", "desc": "Parfait pour débuter (élégant et simple).", "amd64": "https://www.linuxmint.com/download.php" },
+      { "name": "Fedora Workstation", "desc": "Toujours à la pointe des technologies.", "amd64": "https://fedoraproject.org/workstation/download/" },
+      { "name": "Debian", "desc": "Le système universel (ultra-stable).", "amd64": "https://www.debian.org/distrib/" },
+      { "name": "Pop!_OS", "desc": "Excellent pour le dev et le gaming (par System76).", "amd64": "https://pop.system76.com/" }
+    ],
+    "Linux : Performance & Avancé": [
+      { "name": "Arch Linux", "desc": "Pour ceux qui veulent construire leur OS de A à Z.", "amd64": "http://mirrors.evowise.com/archlinux/iso/latest/archlinux-x86_64.iso" },
+      { "name": "Manjaro", "desc": "La puissance d'Arch en version simplifiée.", "amd64": "https://manjaro.org/download/" },
+      { "name": "Zorin OS", "desc": "Conçu pour ressembler à Windows ou Mac.", "amd64": "https://zorin.com/os/download/" }
+    ],
+    "Linux : Vie Privée & Anonymat": [
+      { "name": "Tails", "desc": "L'OS utilisé par Snowden pour l'anonymat total.", "amd64": "https://tails.net/install/index.fr.html" },
+      { "name": "Qubes OS", "desc": "Sécurité par compartimentation (très avancé).", "amd64": "https://www.qubes-os.org/download/" },
+      { "name": "Whonix", "desc": "Système focalisé sur la connexion via Tor.", "amd64": "https://www.whonix.org/wiki/Download" }
+    ]
+  }
 }
