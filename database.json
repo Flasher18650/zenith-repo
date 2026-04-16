@@ -1,0 +1,165 @@
+{
+"win": {
+"Cyber-Sécurité": [
+{
+"name": "Wireshark",
+"desc": "Analyseur de protocoles réseau en temps réel.",
+"amd64": "https://2.tlu.dl.wireshark.org/win64/Wireshark-latest.exe",
+"i386": "https://2.tlu.dl.wireshark.org/win32/Wireshark-latest.exe"
+},
+{
+"name": "Nmap",
+"desc": "Scanner de ports et outil d'exploration réseau.",
+"amd64": "https://nmap.org/dist/nmap-7.94-setup.exe"
+},
+{
+"name": "Metasploit",
+"desc": "Framework de test d'intrusion et d'exploitation.",
+"amd64": "https://windows.metasploit.com/metasploitframework-latest.msi"
+},
+{
+"name": "Burp Suite Community",
+"desc": "Outils pour la sécurité des applications web.",
+"amd64": "https://portswigger.net/burp/releases/community/latest"
+}
+],
+"Développement": [
+{
+"name": "VS Code",
+"desc": "Éditeur de code polyvalent et puissant.",
+"amd64": "https://code.visualstudio.com/sha/download?build=stable&os=win32-x64",
+"i386": "https://code.visualstudio.com/sha/download?build=stable&os=win32"
+},
+{
+"name": "PyCharm Community",
+"desc": "IDE professionnel pour le développement Python.",
+"amd64": "https://www.jetbrains.com/pycharm/download/"
+},
+{
+"name": "Git for Windows",
+"desc": "Système de contrôle de version décentralisé.",
+"amd64": "https://github.com/git-for-windows/git/releases/latest"
+},
+{
+"name": "Docker Desktop",
+"desc": "Conteneurisation d'applications.",
+"amd64": "https://www.docker.com/products/docker-desktop/"
+}
+],
+"Communication": [
+{
+"name": "Discord",
+"desc": "Messagerie et chat vocal pour les communautés.",
+"amd64": "https://discord.com/api/download?platform=win&format=exe"
+},
+{
+"name": "Telegram",
+"desc": "Messagerie sécurisée et ultra-rapide.",
+"amd64": "https://desktop.telegram.org/caps/mswin/setup"
+},
+{
+"name": "Signal",
+"desc": "Messagerie axée sur la confidentialité.",
+"amd64": "https://updates.signal.org/desktop/signal-desktop-win-7.1.1.exe"
+}
+],
+"Bureautique": [
+{
+"name": "LibreOffice",
+"desc": "Suite bureautique complète et libre.",
+"amd64": "https://www.libreoffice.org/download/download/"
+},
+{
+"name": "7-Zip",
+"desc": "Compresseur et décompresseur de fichiers.",
+"amd64": "https://www.7-zip.org/a/7z2301-x64.exe"
+},
+{
+"name": "SumatraPDF",
+"desc": "Lecteur PDF léger et rapide.",
+"amd64": "https://www.sumatrapdfreader.org/download-free-pdf-viewer"
+}
+],
+"Jeux & Émulation": [
+{
+"name": "Steam",
+"desc": "Plateforme de distribution de jeux vidéo.",
+"amd64": "https://cdn.akamai.steamstatic.com/client/installer/SteamSetup.exe"
+},
+{
+"name": "Epic Games Launcher",
+"desc": "Accès aux jeux Epic Games et Unreal Engine.",
+"amd64": "https://launcher-public-service-prod06.ol.epicgames.com/launcher/api/installer/download/EpicGamesLauncherInstaller.msi"
+},
+{
+"name": "PCSX2",
+"desc": "L'émulateur PS2 de référence.",
+"amd64": "https://pcsx2.net/downloads/"
+},
+{
+"name": "RPCS3",
+"desc": "Émulateur PlayStation 3 open-source.",
+"amd64": "https://rpcs3.net/download"
+}
+],
+"Multimédia": [
+{
+"name": "VLC Media Player",
+"desc": "Lecteur multimédia universel.",
+"amd64": "https://get.videolan.org/vlc/last/win64/vlc-win64.exe"
+},
+{
+"name": "OBS Studio",
+"desc": "Logiciel de streaming et d'enregistrement.",
+"amd64": "https://obsproject.com/download"
+},
+{
+"name": "Blender",
+"desc": "Création 3D et animation professionnelle.",
+"amd64": "https://www.blender.org/download/"
+},
+{
+"name": "DaVinci Resolve",
+"desc": "Montage vidéo et étalonnage pro.",
+"amd64": "https://www.blackmagicdesign.com/fr/products/davinciresolve"
+}
+]
+},
+"mac": {
+"Outils": [
+{
+"name": "AppCleaner",
+"desc": "Désinstallation propre d'applications.",
+"amd64": "https://freemacsoft.net/appcleaner/"
+},
+{
+"name": "IINA",
+"desc": "Lecteur vidéo moderne pour macOS.",
+"amd64": "https://iina.io/"
+}
+]
+},
+"linux": {
+"Système": [
+{
+"name": "Flatpak",
+"desc": "Format universel de paquets Linux.",
+"amd64": "https://flatpak.org/setup/"
+}
+]
+},
+"iso": {
+"Distributions": [
+{
+"name": "Kali Linux",
+"desc": "Distribution pour les tests de sécurité.",
+"amd64": "https://cdimage.kali.org/kali-2024.1/kali-linux-2024.1-installer-amd64.iso"
+},
+{
+"name": "Ubuntu 24.04",
+"desc": "Système Linux stable et populaire.",
+"amd64": "https://releases.ubuntu.com/24.04/ubuntu-24.04-desktop-amd64.iso"
+}
+]
+}
+}
