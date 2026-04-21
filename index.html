@@ -360,12 +360,14 @@
 
                 apps.forEach(a => {
                     const link = a[currentArch] || a['amd64'] || "#";
+                    const cleanName = (a.name || "").replace(/\s*#\d+(\s*#\d+)?\s*$/g, "");
+                    const cleanDesc = (a.desc || "").replace(/\s*\(genere \d+\)\s*$/g, "");
                     const row = document.createElement('div');
                     row.className = "app-row";
                     row.innerHTML = `
                         <div>
-                            <span class="app-name">${a.name}</span>
-                            <span class="app-desc">${a.desc}</span>
+                            <span class="app-name">${cleanName}</span>
+                            <span class="app-desc">${cleanDesc}</span>
                         </div>
                         <a href="${link}" target="_blank" class="btn-dl">Télécharger</a>
                     `;
