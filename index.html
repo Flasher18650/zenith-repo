@@ -26,7 +26,6 @@
             line-height: 1.6;
         }
 
-        /* Header style macOS */
         header {
             display: flex;
             justify-content: space-between;
@@ -41,9 +40,9 @@
             z-index: 1000;
         }
 
-        .logo { 
-            font-size: 1.4rem; 
-            font-weight: 800; 
+        .logo {
+            font-size: 1.4rem;
+            font-weight: 800;
             background: var(--gradient);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
@@ -76,13 +75,12 @@
             transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
-        .arch-btn.active { 
-            background: var(--gradient); 
-            color: #000; 
+        .arch-btn.active {
+            background: var(--gradient);
+            color: #000;
             box-shadow: 0 4px 10px rgba(56, 189, 248, 0.2);
         }
 
-        /* Navigation floue */
         nav.main-nav {
             display: flex;
             justify-content: center;
@@ -107,9 +105,7 @@
 
         .tab:hover { color: var(--text); }
 
-        .tab.active { 
-            color: var(--blue-light); 
-        }
+        .tab.active { color: var(--blue-light); }
 
         .tab.active::after {
             content: '';
@@ -129,7 +125,7 @@
             overflow-x: auto;
             scrollbar-width: none;
         }
-        
+
         .sub-nav::-webkit-scrollbar { display: none; }
 
         .filter-btn {
@@ -146,20 +142,19 @@
             transition: all 0.3s ease;
         }
 
-        .filter-btn.active { 
+        .filter-btn.active {
             background: var(--gradient);
             color: #000;
             border-color: transparent;
             box-shadow: 0 4px 15px rgba(56, 189, 248, 0.2);
         }
 
-        .container { 
-            max-width: 900px; 
-            margin: 0 auto; 
-            padding: 20px; 
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
         }
 
-        /* Barre de recherche Glassmorphism */
         .search-wrapper {
             position: relative;
             padding: 1px;
@@ -205,7 +200,6 @@
             opacity: 0.3;
         }
 
-        /* App Rows floues */
         .app-row {
             display: flex;
             justify-content: space-between;
@@ -219,24 +213,24 @@
             transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
         }
 
-        .app-row:hover { 
+        .app-row:hover {
             background: var(--glass-heavy);
             transform: scale(1.02) translateY(-2px);
             border-color: rgba(56, 189, 248, 0.4);
             box-shadow: 0 10px 25px rgba(0,0,0,0.2);
         }
 
-        .app-name { 
-            font-weight: 700; 
-            color: #fff; 
+        .app-name {
+            font-weight: 700;
+            color: #fff;
             font-size: 1.1rem;
-            display: block; 
+            display: block;
             margin-bottom: 2px;
         }
-        
-        .app-desc { 
-            font-size: 0.85rem; 
-            color: var(--dim); 
+
+        .app-desc {
+            font-size: 0.85rem;
+            color: var(--dim);
         }
 
         .btn-dl {
@@ -251,15 +245,20 @@
             background: rgba(56, 189, 248, 0.05);
         }
 
-        .btn-dl:hover { 
-            background: var(--gradient); 
-            color: #000; 
+        .btn-dl:hover {
+            background: var(--gradient);
+            color: #000;
             border-color: transparent;
             box-shadow: 0 8px 20px rgba(56, 189, 248, 0.3);
             transform: translateY(-2px);
         }
 
-        .loader { text-align: center; padding: 100px; color: var(--dim); font-size: 0.9rem; }
+        .loader {
+            text-align: center;
+            padding: 100px;
+            color: var(--dim);
+            font-size: 0.9rem;
+        }
     </style>
 </head>
 <body>
@@ -287,7 +286,7 @@
     <div class="search-wrapper">
         <input type="text" id="searchInput" class="search-bar" placeholder="Recherche rapide..." oninput="render()">
     </div>
-    
+
     <div id="content-area">
         <div class="loader">Chargement de l'interface...</div>
     </div>
@@ -297,9 +296,9 @@
     const JSON_URL = "./database.json";
 
     let database = null;
-    let currentTab = 'win';
-    let currentFilter = 'all';
-    let currentArch = 'amd64';
+    let currentTab = "win";
+    let currentFilter = "all";
+    let currentArch = "amd64";
 
     async function init() {
         try {
@@ -308,32 +307,34 @@
             database = await res.json();
             render();
         } catch (e) {
-            document.getElementById('content-area').innerHTML = `<div style="text-align:center; padding:40px; color:#f87171; background:var(--glass); border-radius:20px;">Chargement de database.json echoue.</div>`;
+            document.getElementById("content-area").innerHTML =
+                `<div style="text-align:center; padding:40px; color:#f87171; background:var(--glass); border-radius:20px;">Chargement de database.json echoue.</div>`;
         }
     }
 
     function setArch(arch) {
         currentArch = arch;
-        document.getElementById('btn32').classList.toggle('active', arch === 'i386');
-        document.getElementById('btn64').classList.toggle('active', arch === 'amd64');
+        document.getElementById("btn32").classList.toggle("active", arch === "i386");
+        document.getElementById("btn64").classList.toggle("active", arch === "amd64");
         render();
     }
 
     function renderSubNav() {
-        const nav = document.getElementById('filter-nav');
+        const nav = document.getElementById("filter-nav");
         nav.innerHTML = "";
         if (!database || !database[currentTab]) return;
+
         const categories = Object.keys(database[currentTab]);
-        
-        const bAll = document.createElement('button');
-        bAll.className = `filter-btn ${currentFilter === 'all' ? 'active' : ''}`;
+
+        const bAll = document.createElement("button");
+        bAll.className = `filter-btn ${currentFilter === "all" ? "active" : ""}`;
         bAll.innerText = "Tout explorer";
-        bAll.onclick = () => { currentFilter = 'all'; render(); };
+        bAll.onclick = () => { currentFilter = "all"; render(); };
         nav.appendChild(bAll);
 
         categories.forEach(cat => {
-            const b = document.createElement('button');
-            b.className = `filter-btn ${currentFilter === cat ? 'active' : ''}`;
+            const b = document.createElement("button");
+            b.className = `filter-btn ${currentFilter === cat ? "active" : ""}`;
             b.innerText = cat;
             b.onclick = () => { currentFilter = cat; render(); };
             nav.appendChild(b);
@@ -343,26 +344,39 @@
     function render() {
         if (!database) return;
         renderSubNav();
-        const area = document.getElementById('content-area');
+
+        const area = document.getElementById("content-area");
         area.innerHTML = "";
-        const search = document.getElementById('searchInput').value.toLowerCase();
+        const search = document.getElementById("searchInput").value.toLowerCase();
         const platformData = database[currentTab] || {};
 
         Object.keys(platformData).forEach(cat => {
-            if (currentFilter !== 'all' && currentFilter !== cat) return;
-            const apps = platformData[cat].filter(a => a.name.toLowerCase().includes(search) || a.desc.toLowerCase().includes(search));
+            if (currentFilter !== "all" && currentFilter !== cat) return;
+
+            const apps = platformData[cat].filter(a => {
+                const n = (a.name || "").toLowerCase();
+                const d = (a.desc || "").toLowerCase();
+                return n.includes(search) || d.includes(search);
+            });
 
             if (apps.length > 0) {
-                const h = document.createElement('div');
+                const h = document.createElement("div");
                 h.className = "cat-title";
                 h.innerText = cat;
                 area.appendChild(h);
 
                 apps.forEach(a => {
-                    const link = a[currentArch] || a['amd64'] || "#";
-                    const cleanName = (a.name || "").replace(/\s*#\d+(\s*#\d+)?\s*$/g, "");
-                    const cleanDesc = (a.desc || "").replace(/\s*\(genere \d+\)\s*$/g, "");
-                    const row = document.createElement('div');
+                    const link = a[currentArch] || a["amd64"] || "#";
+                    const cleanName = (a.name || "")
+                        .replace(/\s*#\d+/g, "")
+                        .replace(/\s{2,}/g, " ")
+                        .trim();
+                    const cleanDesc = (a.desc || "")
+                        .replace(/\s*\(genere\s*\d+\)/gi, "")
+                        .replace(/\s{2,}/g, " ")
+                        .trim();
+
+                    const row = document.createElement("div");
                     row.className = "app-row";
                     row.innerHTML = `
                         <div>
@@ -377,17 +391,18 @@
         });
     }
 
-    document.querySelectorAll('.tab').forEach(t => {
+    document.querySelectorAll(".tab").forEach(t => {
         t.onclick = () => {
-            document.querySelectorAll('.tab').forEach(x => x.classList.remove('active'));
-            t.classList.add('active');
+            document.querySelectorAll(".tab").forEach(x => x.classList.remove("active"));
+            t.classList.add("active");
             currentTab = t.dataset.tab;
-            currentFilter = 'all';
+            currentFilter = "all";
             render();
         };
     });
 
     init();
 </script>
+
 </body>
 </html>
