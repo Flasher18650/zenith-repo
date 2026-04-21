@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zénith Mirror | Hub Logiciels</title>
+    <style>
+        :root {
+            --bg: #030712;
+            --glass: rgba(15, 23, 42, 0.6);
+            --glass-heavy: rgba(30, 41, 59, 0.7);
+            --blue-light: #38bdf8;
+            --blue-dark: #0ea5e9;
+            --gradient: linear-gradient(135deg, #38bdf8 0%, #0ea5e9 100%);
+            --text: #f8fafc;
+            --dim: #94a3b8;
+            --border: rgba(255, 255, 255, 0.1);
+        }
+
+        body {
+            margin: 0;
+            font-family: 'SF Pro Display', 'Segoe UI', system-ui, sans-serif;
+            background: radial-gradient(circle at top right, #0c4a6e, #030712 40%);
+            background-attachment: fixed;
+            color: var(--text);
+            line-height: 1.6;
+        }
+
+        /* Header style macOS */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 5%;
+            background: rgba(15, 23, 42, 0.4);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-bottom: 1px solid var(--border);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .logo { 
+            font-size: 1.4rem; 
+            font-weight: 800; 
+            background: var(--gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            letter-spacing: -0.5px;
+            text-transform: uppercase;
+        }
+
+        .arch-selector {
+            background: var(--gradient);
+            padding: 1px;
+            border-radius: 12px;
+        }
+
+        .arch-inner {
+            display: flex;
+            background: rgba(15, 23, 42, 0.8);
+            border-radius: 11px;
+            padding: 3px;
+        }
+
+        .arch-btn {
+            padding: 6px 16px;
+            border: none;
+            background: transparent;
+            color: var(--dim);
+            cursor: pointer;
+            font-size: 0.75rem;
+            font-weight: 600;
+            border-radius: 9px;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .arch-btn.active { 
+            background: var(--gradient); 
+            color: #000; 
+            box-shadow: 0 4px 10px rgba(56, 189, 248, 0.2);
+        }
+
+        /* Navigation floue */
+        nav.main-nav {
+            display: flex;
+            justify-content: center;
+            background: rgba(15, 23, 42, 0.5);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--border);
+            position: sticky;
+            top: 65px;
+            z-index: 999;
+        }
+
+        .tab {
+            padding: 15px 25px;
+            cursor: pointer;
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: var(--dim);
+            text-transform: uppercase;
+            position: relative;
+            transition: all 0.3s ease;
+        }
+
+        .tab:hover { color: var(--text); }
+
+        .tab.active { 
+            color: var(--blue-light); 
+        }
+
+        .tab.active::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 20%;
+            right: 20%;
+            height: 3px;
+            background: var(--gradient);
+            border-radius: 10px 10px 0 0;
+        }
+
+        .sub-nav {
+            display: flex;
+            gap: 12px;
+            padding: 15px 5%;
+            overflow-x: auto;
+            scrollbar-width: none;
+        }
+        
+        .sub-nav::-webkit-scrollbar { display: none; }
+
+        .filter-btn {
+            background: var(--glass);
+            color: var(--dim);
+            border: 1px solid var(--border);
+            backdrop-filter: blur(5px);
+            padding: 8px 18px;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            cursor: pointer;
+            white-space: nowrap;
+            transition: all 0.3s ease;
+        }
+
+        .filter-btn.active { 
+            background: var(--gradient);
+            color: #000;
+            border-color: transparent;
+            box-shadow: 0 4px 15px rgba(56, 189, 248, 0.2);
+        }
+
+        .container { 
+            max-width: 900px; 
+            margin: 0 auto; 
+            padding: 20px; 
+        }
+
+        /* Barre de recherche Glassmorphism */
+        .search-wrapper {
+            position: relative;
+            padding: 1px;
+            background: linear-gradient(135deg, rgba(255,255,255,0.2), rgba(255,255,255,0.05));
+            border-radius: 18px;
+            margin-bottom: 40px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+        }
+
+        .search-bar {
+            width: 100%;
+            background: rgba(15, 23, 42, 0.7);
+            backdrop-filter: blur(15px);
+            border: none;
+            padding: 20px 25px;
+            border-radius: 17px;
+            color: white;
+            font-size: 1rem;
+            outline: none;
+            box-sizing: border-box;
+            display: block;
+        }
+
+        .search-bar::placeholder { color: var(--dim); }
+
+        .cat-title {
+            font-size: 0.75rem;
+            color: var(--blue-light);
+            margin: 40px 0 15px 0;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .cat-title::after {
+            content: '';
+            height: 1px;
+            flex-grow: 1;
+            background: linear-gradient(90deg, var(--blue-light), transparent);
+            opacity: 0.3;
+        }
+
+        /* App Rows floues */
+        .app-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 18px 24px;
+            background: var(--glass);
+            backdrop-filter: blur(10px);
+            border: 1px solid var(--border);
+            margin-bottom: 12px;
+            border-radius: 16px;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        .app-row:hover { 
+            background: var(--glass-heavy);
+            transform: scale(1.02) translateY(-2px);
+            border-color: rgba(56, 189, 248, 0.4);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+        }
+
+        .app-name { 
+            font-weight: 700; 
+            color: #fff; 
+            font-size: 1.1rem;
+            display: block; 
+            margin-bottom: 2px;
+        }
+        
+        .app-desc { 
+            font-size: 0.85rem; 
+            color: var(--dim); 
+        }
+
+        .btn-dl {
+            padding: 10px 22px;
+            border: 1px solid var(--blue-light);
+            color: var(--blue-light);
+            text-decoration: none;
+            font-size: 0.85rem;
+            border-radius: 12px;
+            font-weight: 700;
+            transition: all 0.3s ease;
+            background: rgba(56, 189, 248, 0.05);
+        }
+
+        .btn-dl:hover { 
+            background: var(--gradient); 
+            color: #000; 
+            border-color: transparent;
+            box-shadow: 0 8px 20px rgba(56, 189, 248, 0.3);
+            transform: translateY(-2px);
+        }
+
+        .loader { text-align: center; padding: 100px; color: var(--dim); font-size: 0.9rem; }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="logo">ZENITH MIRROR</div>
+    <div class="arch-selector">
+        <div class="arch-inner">
+            <button id="btn32" class="arch-btn" onclick="setArch('i386')">32-BIT</button>
+            <button id="btn64" class="arch-btn active" onclick="setArch('amd64')">64-BIT</button>
+        </div>
+    </div>
+</header>
+
+<nav class="main-nav">
+    <div class="tab active" data-tab="win">Windows</div>
+    <div class="tab" data-tab="mac">macOS</div>
+    <div class="tab" data-tab="linux">Linux</div>
+    <div class="tab" data-tab="iso">ISO</div>
+</nav>
+
+<div id="filter-nav" class="sub-nav"></div>
+
+<div class="container">
+    <div class="search-wrapper">
+        <input type="text" id="searchInput" class="search-bar" placeholder="Recherche rapide..." oninput="render()">
+    </div>
+    
+    <div id="content-area">
+        <div class="loader">Chargement de l'interface...</div>
+    </div>
+</div>
+
+<script>
+    const JSON_URL = "./database.json";
+
+    let database = null;
+    let currentTab = 'win';
+    let currentFilter = 'all';
+    let currentArch = 'amd64';
+
+    async function init() {
+        try {
+            const res = await fetch(JSON_URL);
+            if (!res.ok) throw new Error();
+            database = await res.json();
+            render();
+        } catch (e) {
+            document.getElementById('content-area').innerHTML = `<div style="text-align:center; padding:40px; color:#f87171; background:var(--glass); border-radius:20px;">Chargement de database.json echoue.</div>`;
+        }
+    }
+
+    function setArch(arch) {
+        currentArch = arch;
+        document.getElementById('btn32').classList.toggle('active', arch === 'i386');
+        document.getElementById('btn64').classList.toggle('active', arch === 'amd64');
+        render();
+    }
+
+    function renderSubNav() {
+        const nav = document.getElementById('filter-nav');
+        nav.innerHTML = "";
+        if (!database || !database[currentTab]) return;
+        const categories = Object.keys(database[currentTab]);
+        
+        const bAll = document.createElement('button');
+        bAll.className = `filter-btn ${currentFilter === 'all' ? 'active' : ''}`;
+        bAll.innerText = "Tout explorer";
+        bAll.onclick = () => { currentFilter = 'all'; render(); };
+        nav.appendChild(bAll);
+
+        categories.forEach(cat => {
+            const b = document.createElement('button');
+            b.className = `filter-btn ${currentFilter === cat ? 'active' : ''}`;
+            b.innerText = cat;
+            b.onclick = () => { currentFilter = cat; render(); };
+            nav.appendChild(b);
+        });
+    }
+
+    function render() {
+        if (!database) return;
+        renderSubNav();
+        const area = document.getElementById('content-area');
+        area.innerHTML = "";
+        const search = document.getElementById('searchInput').value.toLowerCase();
+        const platformData = database[currentTab] || {};
+
+        Object.keys(platformData).forEach(cat => {
+            if (currentFilter !== 'all' && currentFilter !== cat) return;
+            const apps = platformData[cat].filter(a => a.name.toLowerCase().includes(search) || a.desc.toLowerCase().includes(search));
+
+            if (apps.length > 0) {
+                const h = document.createElement('div');
+                h.className = "cat-title";
+                h.innerText = cat;
+                area.appendChild(h);
+
+                apps.forEach(a => {
+                    const link = a[currentArch] || a['amd64'] || "#";
+                    const row = document.createElement('div');
+                    row.className = "app-row";
+                    row.innerHTML = `
+                        <div>
+                            <span class="app-name">${a.name}</span>
+                            <span class="app-desc">${a.desc}</span>
+                        </div>
+                        <a href="${link}" target="_blank" class="btn-dl">Télécharger</a>
+                    `;
+                    area.appendChild(row);
+                });
+            }
+        });
+    }
+
+    document.querySelectorAll('.tab').forEach(t => {
+        t.onclick = () => {
+            document.querySelectorAll('.tab').forEach(x => x.classList.remove('active'));
+            t.classList.add('active');
+            currentTab = t.dataset.tab;
+            currentFilter = 'all';
+            render();
+        };
+    });
+
+    init();
+</script>
+</body>
+</html>
